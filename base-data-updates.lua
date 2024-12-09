@@ -53,6 +53,10 @@ if settings.startup["wood-logistics-belts"].value then
   end
 end
 
+if settings.startup["wood-logistics-cargo-wagon"].value then
+  frep.add_ingredient("cargo-wagon", {type="item", name="wood-cargo-wagon", amount=1})
+end
+
 local rail_cost = settings.startup["wood-logistics-rail-cost"].value
 if rail_cost > 0 then
   frep.add_ingredient("rail", {type="item", name=wood_item, amount=rail_cost})

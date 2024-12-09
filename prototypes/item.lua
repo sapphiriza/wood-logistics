@@ -70,23 +70,22 @@ if settings.startup["wood-logistics-belts"].value then
   })
 end
 
--------------------------------------------------------------------------- Inserters
+-------------------------------------------------------------------------- Trains
 
-if settings.startup["wood-logistics-inserters"].value then
+if settings.startup["wood-logistics-cargo-wagon"].value then
   data:extend({
     {
-      type = "item",
-      name = "wood-inserter",
-      icon = "__wood-logistics__/graphics/icons/wood-inserter.png",
-      subgroup = "inserter",
-      color_hint = { text = "Y" },
-      order = "ba[inserter]",
-      inventory_move_sound = wood_logistics_item_sounds.wood_inserter_inventory_move,
-      pick_sound = wood_logistics_item_sounds.wood_inserter_inventory_pickup,
-      drop_sound = wood_logistics_item_sounds.wood_inserter_inventory_move,
-      place_result = "inserter",
-      stack_size = 50
-    },
+      type = "item-with-entity-data",
+      name = "wood-cargo-wagon",
+      icon = "__wood-logistics__/graphics/icons/wood-cargo-wagon.png",
+      subgroup = "train-transport",
+      order = "c[rolling-stock]-ba[wood-cargo-wagon]",
+      inventory_move_sound = item_sounds.metal_large_inventory_move,
+      pick_sound = item_sounds.locomotive_inventory_pickup,
+      drop_sound = item_sounds.metal_large_inventory_move,
+      place_result = "wood-cargo-wagon",
+      stack_size = 5
+    }
   })
 end
 
