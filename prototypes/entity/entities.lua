@@ -4,10 +4,8 @@ local sounds = require("__base__.prototypes.entity.sounds")
 -------------------------------------------------------------------------- Transport belts
 
 if settings.startup["wood-logistics-belts"].value then
-  wood_belt_animation_set =
-  {
-    animation_set =
-    {
+  wood_belt_animation_set = {
+    animation_set = {
       filename = "__wood-logistics__/graphics/entity/wood-transport-belt/wood-transport-belt.png",
       priority = "extra-high",
       width = 128,
@@ -16,7 +14,7 @@ if settings.startup["wood-logistics-belts"].value then
       frame_count = 16,
       direction_count = 20
     }
-  }  
+  }
 
   data:extend({
     {
@@ -256,6 +254,7 @@ if settings.startup["wood-logistics-belts"].value then
 end
 
 -------------------------------------------------------------------------- Electric poles
+
 if settings.startup["wood-logistics-big-electric-pole"].value then
   data:extend({
     {

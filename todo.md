@@ -1,1 +1,3 @@
-- Update base-data-updates to use fdsl instead (and reorganize into Item/Recipe/Tech changes)
+# Todo:
+- Add wooden cargo wagons (lighter, less space and health)
+- Remix cargo wagon door open sound with wooden chest open sound
