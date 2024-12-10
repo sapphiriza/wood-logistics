@@ -12,6 +12,10 @@ if mods["big-wooden-pole"] then
   data.raw.item["big-wooden-pole"].order = "a[energy]-c[big-electric-pole]a"
 end
 
+if settings.startup["wood-logistics-cargo-wagon"].value then
+  data.raw["item-with-entity-data"]["cargo-wagon"].order = "c[rolling-stock]-b[cargo-wagon]b"
+end
+
 if settings.startup["wood-logistics-big-electric-pole"].value then
   data.raw.item["big-electric-pole"].order = "a[energy]-c[big-electric-pole]c"
 end
@@ -72,6 +76,13 @@ if settings.startup["wood-logistics-inserter"].value then
   end
 end
 
+if settings.startup["wood-logistics-cargo-wagon"].value then
+  frep.add_ingredient("cargo-wagon", {type="item", name="wood-cargo-wagon", amount=1})
+  if mods["space-age"] then
+    frep.replace_ingredient("cargo-wagon", "iron-plate", "tungsten-plate")
+  end
+end
+
 if settings.startup["wood-logistics-assembling-machine"].value then
   if mods["aai-industry"] then
     frep.replace_ingredient("assembling-machine-1", "iron-gear-wheel", wood_item)
@@ -111,7 +122,8 @@ local wood_entities = {
   ["electric-pole"] = {"small-electric-pole", "big-wooden-pole", "big-wood-electric-pole"},
   ["transport-belt"] = {"wood-transport-belt"},
   ["underground-belt"] = {"wood-underground-belt"},
-  ["splitter"] = {"wood-splitter"}
+  ["splitter"] = {"wood-splitter"},
+  ["cargo-wagon"] = {"wood-cargo-wagon"}
 }
 
 for type,list in pairs(wood_entities) do
@@ -139,7 +151,8 @@ if mods["space-age"] then
     for _,entity_name in pairs(list) do
       local entity = data.raw[type][entity_name]
       if entity then
-        entity.surface_conditions = {{property="pressure", min=1000, max=2000}}
+        if not entity.surface_conditions then entity.surface_conditions = {{property="gravity", min=1}} end
+        table.insert(entity.surface_conditions, {property="pressure", max=2000})
       end
     end
   end

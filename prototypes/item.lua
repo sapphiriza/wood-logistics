@@ -79,7 +79,7 @@ if settings.startup["wood-logistics-cargo-wagon"].value then
       name = "wood-cargo-wagon",
       icon = "__wood-logistics__/graphics/icons/wood-cargo-wagon.png",
       subgroup = "train-transport",
-      order = "c[rolling-stock]-ba[wood-cargo-wagon]",
+      order = "c[rolling-stock]-b[cargo-wagon]a",
       inventory_move_sound = item_sounds.metal_large_inventory_move,
       pick_sound = item_sounds.locomotive_inventory_pickup,
       drop_sound = item_sounds.metal_large_inventory_move,

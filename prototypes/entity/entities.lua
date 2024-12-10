@@ -260,7 +260,7 @@ if settings.startup["wood-logistics-cargo-wagon"].value then
     {
       type = "cargo-wagon",
       name = "wood-cargo-wagon",
-      icon = "__base__/graphics/icons/wood-cargo-wagon.png",
+      icon = "__wood-logistics__/graphics/icons/wood-cargo-wagon.png",
       flags = {"placeable-neutral", "player-creation", "placeable-off-grid"},
       inventory_size = 20,
       minable = {mining_time = 0.5, result = "wood-cargo-wagon"},

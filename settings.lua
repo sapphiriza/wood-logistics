@@ -30,7 +30,7 @@ data:extend({
     setting_type = "startup",
     default_value = true,
     order = "b[logistics]-c[trains]-a[wagon]"
-  }
+  },
   -- add wood to rails recipe
   {
     type = "int-setting",
@@ -63,14 +63,6 @@ data:extend({
     setting_type = "startup",
     default_value = true,
     order = "d[poles]-b[big]"
-  },
-  -- add wooden cargo wagon
-  {
-    type = "bool-setting",
-    name = "wood-logistics-cargo-wagon",
-    setting_type = "startup",
-    default_value = true,
-    order = "e[train]-a[cargo-wagon]"
   },
   -- add wood to repair pack recipe
   {
